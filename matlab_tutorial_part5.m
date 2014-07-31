@@ -35,6 +35,7 @@ colorbar    % This command puts a colorbar next to the plot
 ref=convn(alice,kernel,'valid');
 if sum(size(alice_convolved)==size(alice)-size(kernel)+1)==2 & alice_convolved==convn(alice,kernel,'valid')
     disp('Congratulations, your convolution is working nicely')
+    open('matlab_tutorial_part6')
 else
     error('something is not right, please check your convolution function again')
 end

@@ -48,6 +48,7 @@ message='fill in here the message you see in the bwd pooled image';
 load('mes.mat')
 if sum(size(pic1_pooled)==size(pic1)./poolingSize)==2 && strcmp(message,sol{2}{3}{4})
     disp('Congratulations, your maxPooling bwd function seems to work, or did you cheat? ;)')
+    open('matlab_tutorial_part5')
 else
     error('something is not right, please check your maxPoolingBwd function again')
 end

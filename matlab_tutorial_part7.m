@@ -64,6 +64,7 @@ disp(norm(numgrad2-dfcn_wrt_x2(x2))/norm(numgrad2+dfcn_wrt_x2(x2)))
 
 if norm(numgrad1-dfcn_wrt_x1(x1))/norm(numgrad1+dfcn_wrt_x1(x1))<1e-9 && norm(numgrad2-dfcn_wrt_x2(x2))/norm(numgrad2+dfcn_wrt_x2(x2))<1e-9
     disp('Congratulations! Your numerical gradient is very very close to the analytical gradient')
+    open('matlab_tutorial_part8')
 else
     error('the difference between analytical and numerical gradient is too big, check on you calculation again')
 end

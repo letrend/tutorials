@@ -130,6 +130,7 @@ set(gca,'YDir','normal')
 if costNN(end)<0.001 && iter==iterations 
    disp('----------------------------------------------------------------------------------------------')
    fprintf('Congratulations!! You trained your neuron to produce an average error of %1.2d on the data. \n --------------well done!!-------------\n',costNN(end))
+   open('matlab_tutorial_part7')
 else
    error('you will need to decrease the error below 0.001 to succeed in this tutorial') 
 end

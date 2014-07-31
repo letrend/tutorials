@@ -33,11 +33,6 @@ NN.dWs{3}=zeros(NN.outputs,neurons);
 NN.Bs{3}=zeros(NN.outputs,1);   % ones bias for each neuron
 NN.dBs{3}=zeros(NN.outputs,1);
 
-% For Momentum
-prevdWs{2}=NN.dWs{2};
-prevdWs{3}=NN.dWs{3};
-
-
 %% Training the Neural Network
 % please complete feedForward.m and backProp.m before evaluation of this
 % cell.
@@ -98,6 +93,7 @@ ylabel('cost')
 if costNN(end)<0.015 && iter==iterations 
    disp('----------------------------------------------------------------------------------------------')
    fprintf('Congratulations!! You trained your neuron to produce an average error of %1.2d on the data. \n --------------well done!!-------------\n',costNN(end))
+   open('matlab_tutorial_part9')
 else
    error('you will need to push the error below 0.015 to succeed in this tutorial') 
 end

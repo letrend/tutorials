@@ -34,6 +34,7 @@ title('alice max pooled')
 
 if sum(size(alice_pooled)==size(alice)./poolingSize)==2 & alice_pooled==alice_ref
     disp('Congratulations, your maxPooling is working nicely')
+    open('matlab_tutorial_part3')
 else
     error('something is not right, please check your maxPooling function again')
 end

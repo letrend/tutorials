@@ -37,6 +37,7 @@ title('pooling indices')
 
 if sum(size(alice_pooled)==size(alice)./poolingSize)==2 & indices==indices_ref
     disp('Congratulations, your maxPooling now also saves the indices correctly')
+    open('matlab_tutorial_part4')
 else
     error('something is not right, please check your maxPooling function again')
 end
