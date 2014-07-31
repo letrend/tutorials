@@ -12,8 +12,7 @@ i=1;
 for column=1:size(image,2)-2
     j=1;
     for row=1:size(image,1)-2
-        temp=image(row:row+2,column:column+2).*kernel;
-        image_convolved(j,i)=sum(temp(:));
+        %<YOUR CODE HERE>
         j=j+1;
     end
     i=i+1;

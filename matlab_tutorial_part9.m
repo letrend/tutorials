@@ -89,16 +89,11 @@ NN.dBs{3}=0;
 % feeding 20x20 patches into your neural network. Find a way to
 % illustrate where your neural network is able to detect the
 % trained images in the big 300x400 image.
-meanimage=mean(image(:));
-im=image-meanimage;
-stdimage=2*std(im(:));
-heart=(heart-meanimage)./(stdimage);
-square=(square-meanimage)./(stdimage);
-spiral=(spiral-meanimage)./(stdimage);
-triangular=(triangular-meanimage)./(stdimage);
+
+%<YOUR CODE HERE> (image normalization)
 
 x={heart,square,spiral,triangular};
-target=-ones(4);target(1,1)=1;target(2,2)=1;target(3,3)=1;target(4,4)=1;
+target=zeros(4);
 
 %% Training the Neural Network
 % Trainingsparameter
@@ -112,10 +107,8 @@ for iter=1:iterations
     %% back propagate    edit backPrp.m
     [cost(iter),NN]=backPrp(NN,x{randidx}(:),z,z_withoutNL,y,y_withoutNL,target(:,randidx));
     %% apply gradients 
-    NN.Ws{2}=NN.Ws{2}-eta*NN.dWs{2};
-    NN.Bs{2}=NN.Bs{2}-eta*NN.dBs{2};
-    NN.Ws{3}=NN.Ws{3}-eta*NN.dWs{3};
-    NN.Bs{3}=NN.Bs{3}-eta*NN.dBs{3};
+    
+    %<YOUR CODE HERE>
     
     if mod(iter,100)==0 % each 10 iterations plot
         clc

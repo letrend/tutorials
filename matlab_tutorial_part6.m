@@ -50,7 +50,7 @@ NN.dBs=0;  % Initialization for backProp (Gradient)
 %% Stocatstic Gradient Descent
 % Trainings parameter
 iterations=10000;
-eta=1e-5;
+eta=1e-5; % learning rate
 j=1;
 k=1;
 % Training for loop
@@ -77,8 +77,7 @@ for iter=1:iterations
     %% back Propagation
     [cost(iter),NN]=backProp(NN,x,y,y_withoutNL,target);
     %% Application of gradients
-    NN.Ws=NN.Ws-eta*NN.dWs;
-    NN.Bs=NN.Bs-eta*NN.dBs;
+    %<YOUR CODE HERE>
     
     %% Visualization of your training
     if mod(iter,100)==0 % each 100 iterations plot

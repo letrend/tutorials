@@ -44,17 +44,13 @@ eta=1e-4;      % learning rate (10^-5), feel free to try other learning rates.
 % through too big steps.
 
 for iter=1:iterations
-%     eta=eta0-iter/iterations*eta0;
     randidx=randi(length(x)); % choose random sample
     %% feed forward    edit feedFwd.m
     [z,z_withoutNL,y,y_withoutNL]=feedFwd(NN,x(randidx));
     %% back propagate    edit backPrp.m
     [cost(iter),NN]=backPrp(NN,x(randidx),z,z_withoutNL,y,y_withoutNL,target(randidx));
     %% apply gradients 
-    NN.Ws{2}=NN.Ws{2}-eta*NN.dWs{2};
-    NN.Bs{2}=NN.Bs{2}-eta*NN.dBs{2};
-    NN.Ws{3}=NN.Ws{3}-eta*NN.dWs{3};
-    NN.Bs{3}=NN.Bs{3}-eta*NN.dBs{3};
+    %<YOUR CODE HERE>
     
     %% Visualization of your training
     if mod(iter,100)==0 % each 100 iterations plot
